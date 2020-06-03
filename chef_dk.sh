@@ -7,3 +7,13 @@ cd ~
 chef generate repo generated-chef-repo
 cd generated-chef-repo
 ls -al
+knife configure
+scp user@ipaddress:/home/user/rcpeter.pem ~/.chef/
+knife node list
+knife ssl fetch
+scp chef-starter.zip user@ipaddress:/home/user/
+sudo yum install -y unzip
+unzip chef-starter.zip
+cd chef-repo
+knife ssl fetch
+knife node list
